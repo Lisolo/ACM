@@ -13,14 +13,14 @@ flag = 0
 
 def divisor(number):
     list_divisor = [0]
-    for x in xrange(1,number+1):
+    for x in range(1, number + 1):
         if number % x == 0:
             list_divisor.append(x)
     return list_divisor
 
 while a < b:
-    for x in xrange(1,len(divisor(a))):
-        if a + divisor(a)[-x] <= b:
+    for x in range(1, len(divisor(a))): 
+        if divisor(a)[-x] <= b:
             flag = x
             break
         else:
@@ -31,4 +31,4 @@ while a < b:
         a += divisor(a)[-flag]
         count += 1
 
-print count
+print(count)

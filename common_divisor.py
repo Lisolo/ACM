@@ -7,14 +7,7 @@
 a = 24
 b = 30
 
-def common_divisor(number):
-    divisor = []
-    for x in xrange(1, number + 1):
-        if number % x == 0:
-            divisor.append(x)
-    return divisor
-
-list_a = common_divisor(a)
-list_b = common_divisor(b)
-list_c = list(set(list_a) & set(list_b))
-print len(list_c)
+list_a = [x for x in range(1, a+1) if a % x == 0]
+list_b = [x for x in range(1, b+1) if b % x == 0]
+list_c = set(list_a) & set(list_b)
+print(len(list_c))

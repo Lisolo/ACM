@@ -14,17 +14,17 @@ a = 376
 
 def getTail(n):
     i = 1
-    c = n % (10**i)
+    c = n % (10 ** i)
     while not c:
         i += 1
-        c = n%(10**i)
-    return 10**(len(str(c)))-c
+        c = n % (10 ** i)
+    return 10 ** (len(str(c))) - c
 
 for i in range(100):
     ta = len(str(a))
-    asquare = a**2
-    b = (asquare) % (10**ta) + getTail(asquare / (10**ta)) * (10**ta)
+    asquare = a ** 2
+    b = asquare % (10 ** ta) + getTail(asquare / (10 ** ta)) * (10 ** ta)
     if len(str(b)) == 101:
-        print b
+        print(b)
         break
     a = b

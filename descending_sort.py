@@ -7,5 +7,4 @@
 
 L = [2, 8, 3, 50]
 L.sort()
-L.reverse()
-print L
+print(L[::-1])

@@ -15,9 +15,9 @@ def getSteps(my_list):
         return 0
     dp = [1] * length
     dp1 = [-1] * length
-    for x in xrange(length-2, -1, -1):
-        for y in xrange(length-1, x, -1):
-            if (my_list[y]-my_list[x] >= y-x and dp[y]+1>dp[x]): 
+    for x in range(length-2, -1, -1):
+        for y in range(length-1, x, -1):
+            if (my_list[y] - my_list[x] >= y - x and dp[y] + 1 > dp[x]): 
                 dp[x] = dp[y] + 1
                 dp1[x] = y
     i = dp.index(max(dp))
@@ -28,4 +28,4 @@ def getSteps(my_list):
     my_list[i + 1:] = range(my_list[i]+1, my_list[i]+length-i)
     return length - max(dp)
 
-print getSteps(L)
+print(getSteps(L))
